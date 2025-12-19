@@ -2,16 +2,13 @@
   users = {
     mutableUsers = false;
     users.emi = {
-      description = "Emi";
+      description = "victor";
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
-      hashedPassword = "$y$j9T$gqDrCnffMVyjRFFkMZkbj.$6gyoHmgemhUWrurlCr32oTK1mAzsVl0IAVJfXGLXiN4";
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJF4Waz2pv+NAEsLMT1kaFbtYjx6faBRPgHzlHdN30In"
-      ];
+      extraGroups = [ "wheel", "libvirt" ];
+      hashedPassword = "No";
     };
   };
 
-  time.timeZone = "Europe/Bucharest";
+  time.timeZone = "Europe/Helsinki";
   security.sudo.extraConfig = "Defaults lecture=never,timestamp_type=global,pwfeedback";
 }

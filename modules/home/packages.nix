@@ -1,32 +1,30 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs.unstable; [
-    discord-canary
-    mangohud
-  ];
-
+{pkgs, ...}: {
   services.flatpak = {
     remotes."flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 
-    packages =
-      let
-        mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
-      in
+    packages = let
+      mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
+    in
       builtins.map mkApp [
-        "org.prismlauncher.PrismLauncher"
+        "io.github.celluloid_player.Celluloid"
         "io.gitlab.librewolf-community"
-        "at.vintagestory.VintageStory"
         "org.qbittorrent.qBittorrent"
-        "com.heroicgameslauncher.hgl"
+        "org.libreoffice.LibreOffice"
+        "org.keepassxc.KeePassXC"
+        "com.discordapp.Discord"
+        "com.usebottles.bottles"
+        "com.system76.Popsicle"
         "md.obsidian.Obsidian"
         "com.stremio.Stremio"
-        "org.vinegarhq.Sober"
-        "com.spotify.Client"
+        "org.signal.Signal"
+        "org.videolan.VLC"
+        "org.kde.kdenlive"
+        "cc.arduino.IDE2"
+        "org.gimp.GIMP"
       ];
 
     overrides = {
       "com.stremio.Stremio".Environment.QSG_RENDER_LOOP = "threaded";
-      "org.vinegarhq.Sober".Context.devices = "input";
     };
   };
 }

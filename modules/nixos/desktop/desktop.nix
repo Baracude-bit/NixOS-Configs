@@ -6,7 +6,7 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager = {
-      autoLogin.user = "emi";
+      autoLogin.user = "victor";
       sddm = {
         enable = true;
         wayland.enable = true;
@@ -16,11 +16,8 @@
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
-    khelpcenter
     kwin-x11
-    discover
     aurorae
-    okular
     elisa
     krdp
   ];

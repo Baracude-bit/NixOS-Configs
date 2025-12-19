@@ -1,17 +1,6 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services = {
     flatpak.enable = true;
-    sunshine = {
-      enable = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
-
-    openssh = {
-      settings.PasswordAuthentication = false;
-      enable = true;
-    };
   };
 
   programs = {
@@ -22,7 +11,7 @@
 
     steam = {
       enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = [pkgs.proton-ge-bin];
     };
 
     nh = {
