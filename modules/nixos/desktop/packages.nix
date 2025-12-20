@@ -25,7 +25,6 @@
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
-    syncthing
     neovim
     sbctl
   ];
