@@ -8,8 +8,6 @@
     facter.url = "github:nix-community/nixos-facter-modules";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    import-tree.url = "github:vic/import-tree";
-
     home-manager = {
       # url = "github:nix-community/home-manager/release-25.11";
       url = "github:nix-community/home-manager";
@@ -35,9 +33,29 @@
   outputs =
     inputs:
     let
-      lib = import ./lib.nix { inherit inputs; };
+      lib = inputs.nixpkgs.lib;
+      system = "x86_64-linux";
+      stateVersion = "25.11";
+      mkHosts =
+        hosts:
+        lib.genAttrs hosts (
+          hostname:
+          lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            inherit system;
+            modules = [
+              ./hardware/${hostname}.nix
+              ./modules/nixos.nix
+              {
+                facter.reportPath = ./hardware/${hostname}.json;
+                system.stateVersion = stateVersion;
+                networking.hostname = hostname;
+              }
+            ];
+          }
+        );
     in
     {
-      nixosConfigurations = lib.mkHosts [ "tuxedo" ];
+      nixosConfigurations = mkHosts [ "tuxedo" ];
     };
 }

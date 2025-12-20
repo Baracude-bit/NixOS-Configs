@@ -49,8 +49,8 @@ format() { disko --mode destroy,format,mount; }
 mount() { disko --mode mount; }
 
 facter() {
-  mkdir -p ./hardware/$hostname/
-  nix run github:nix-community/nixos-facter > ./hardware/$hostname/facter.json
+  mkdir -p ./hardware/
+  nix run github:nix-community/nixos-facter > ./hardware/$hostname.json
   git add .
 }
 
