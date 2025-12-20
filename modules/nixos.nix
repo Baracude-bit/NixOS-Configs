@@ -277,7 +277,7 @@
       description = "victor";
       isNormalUser = true;
       extraGroups = [ "libvirtd" "docker" "wheel" ];
-      password = "test"; # WARNING: Change this to a hashed password or use file provision
+      hashedPassword = "$y$j9T$oP0a3qfVM87Y4WqpNSCnF/$Wvod.OTB.jFbUnERpsI54hA1vVIGayZ8zt02KzyG/SD";
     };
   };
 

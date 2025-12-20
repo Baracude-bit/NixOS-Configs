@@ -1,3 +1,4 @@
+
 { pkgs, inputs, ... }:
 {
   imports = with inputs; [ flatpak.homeModules.default ];
@@ -6,6 +7,9 @@
   programs = {
     gh.enable = true;
     git.enable = true;
+    kitty.enable = true;
+    brave.enable = true;
+    neovim.enable = true;
   };
 
   services = {
