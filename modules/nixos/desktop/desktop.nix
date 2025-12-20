@@ -2,6 +2,7 @@
 {
   environment.variables.NIXOS_OZONE_WL = 1;
   programs.partition-manager.enable = true;
+  networking.networkmanager.enable = true;
 
   services = {
     desktopManager.plasma6.enable = true;

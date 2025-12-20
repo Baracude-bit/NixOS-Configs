@@ -29,11 +29,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -42,6 +37,6 @@
       lib = import ./lib.nix { inherit inputs; };
     in
     {
-      nixosConfigurations = lib.mkHosts [ "pc" ];
+      nixosConfigurations = lib.mkHosts [ "nix" ];
     };
 }

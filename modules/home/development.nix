@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs = {
     gh.enable = true;
     git.enable = true;
@@ -12,9 +13,10 @@
     gcc
     gdb
 
-    # rust
+    # Rust
     rustc
 
-    #
+    # Python
+    python315
   ];
 }

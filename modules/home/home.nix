@@ -1,7 +1,4 @@
 { inputs, ... }:
 {
-  imports = with inputs; [
-    nvf.homeManagerModules.default
-    flatpak.homeModules.default
-  ];
+  imports = with inputs; [ flatpak.homeModules.default ];
 }

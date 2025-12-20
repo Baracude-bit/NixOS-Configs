@@ -1,7 +1,6 @@
-{pkgs, ...}: {
-  services = {
-    flatpak.enable = true;
-  };
+{ pkgs, ... }:
+{
+  services.flatpak.enable = true;
 
   programs = {
     nix-index-database.comma.enable = true;
@@ -11,7 +10,7 @@
 
     steam = {
       enable = true;
-      extraCompatPackages = [pkgs.proton-ge-bin];
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
     nh = {

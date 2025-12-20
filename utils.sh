@@ -51,9 +51,8 @@ mount() { disko --mode mount; }
 facter() {
   mkdir -p ./hardware/$hostname/
   nix run github:nix-community/nixos-facter > ./hardware/$hostname/facter.json
+  git add .
 }
-
-vm() { nix run -L ".#nixosConfigurations.$hostname.config.system.build.vm"; }
 
 install() {
   mkdir -p /mnt/data/etc/nixos/
@@ -79,6 +78,7 @@ case "$1" in
     checkRoot
     setHostname "$2"
     setInstallDisk "$3"
+    facter
     "$1"
   ;;
 
@@ -96,10 +96,15 @@ case "$1" in
     "$1"
   ;;
 
-  vm) 
+  formatInstall)
+    checkRoot
     setHostname "$2"
-    "$1"
-    ;;
+    setInstallDisk "$3"
+    facter
+    format
+    install
+  ;;
+
   *)
     echo "Usage: $0 <mode> <hostname> <disk>"
     echo "Modes: format, mount, facter, install"

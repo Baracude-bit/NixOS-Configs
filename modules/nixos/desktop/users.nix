@@ -4,8 +4,8 @@
     users.victor = {
       description = "victor";
       isNormalUser = true;
-      extraGroups = [ "wheel", "libvirt" ];
-      hashedPassword = "No";
+      extraGroups = [ "wheel" ];
+      password = "test";
     };
   };
 

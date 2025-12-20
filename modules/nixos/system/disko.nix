@@ -18,23 +18,28 @@
         };
 
         system.content = {
-          type = "btrfs";
-          subvolumes = {
-            "root" = {
-              mountOptions = [ "noatime" ];
-              mountpoint = "/";
-            };
-            "nix" = {
-              mountOptions = [ "noatime" ];
-              mountpoint = "/nix";
-            };
-            "data" = {
-              mountOptions = [ "noatime" ];
-              mountpoint = "/data";
-            };
-            "home" = {
-              mountOptions = [ "noatime" ];
-              mountpoint = "/home";
+          type = "luks";
+          name = "system";
+          settings.allowDiscards = true;
+          content = {
+            type = "btrfs";
+            subvolumes = {
+              "root" = {
+                mountOptions = [ "noatime" ];
+                mountpoint = "/";
+              };
+              "nix" = {
+                mountOptions = [ "noatime" ];
+                mountpoint = "/nix";
+              };
+              "data" = {
+                mountOptions = [ "noatime" ];
+                mountpoint = "/data";
+              };
+              "home" = {
+                mountOptions = [ "noatime" ];
+                mountpoint = "/home";
+              };
             };
           };
         };

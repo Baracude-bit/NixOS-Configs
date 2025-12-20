@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{
   services.flatpak = {
     remotes."flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 
-    packages = let
-      mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
-    in
+    packages =
+      let
+        mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
+      in
       builtins.map mkApp [
         "io.github.celluloid_player.Celluloid"
         "io.gitlab.librewolf-community"
