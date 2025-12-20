@@ -26,7 +26,6 @@
 
     overrides = {
       "com.stremio.Stremio".Environment.QSG_RENDER_LOOP = "threaded";
-      "com.discordapp.Discord".Context.filesystems = [ "home" ];
     };
   };
 }
