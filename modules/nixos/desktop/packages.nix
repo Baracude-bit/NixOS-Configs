@@ -25,8 +25,9 @@
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
-    sbctl
+    syncthing
     neovim
+    sbctl
   ];
 
   fonts.packages = with pkgs; [
