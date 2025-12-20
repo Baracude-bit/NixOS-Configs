@@ -7,6 +7,7 @@
     flatpak.url = "github:in-a-dil-emma/declarative-flatpak";
     facter.url = "github:nix-community/nixos-facter-modules";
     impermanence.url = "github:nix-community/impermanence";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     import-tree.url = "github:vic/import-tree";
 
     home-manager = {
@@ -37,6 +38,6 @@
       lib = import ./lib.nix { inherit inputs; };
     in
     {
-      nixosConfigurations = lib.mkHosts [ "nix" ];
+      nixosConfigurations = lib.mkHosts [ "tuxedo" ];
     };
 }
