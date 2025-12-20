@@ -127,6 +127,7 @@
   # HARDWARE & SERVICES
   # ================================================================
   networking.networkmanager.enable = true;
+  hardware.enableRedistributableFirmware = true;
   zramSwap.enable = true;
   time.timeZone = "Europe/Helsinki";
 
