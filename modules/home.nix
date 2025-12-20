@@ -2,6 +2,7 @@
 {
   imports = with inputs; [ flatpak.homeModules.default ];
 
+  # Git & Github configuration
   programs = {
     gh.enable = true;
     git.enable = true;
@@ -10,31 +11,41 @@
   services = {
     syncthing.enable = true;
 
+    # --- FLATPAK CONFIGURATION ---
     flatpak = {
       remotes."flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 
-      packages =
-        let
-          mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
-        in
-        builtins.map mkApp [
+      # Helper function to generate full Flathub reference
+      packages = let
+        mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
+        appList = [
+          # Social & Media
+          "com.discordapp.Discord"
+          "org.signal.Signal"
           "io.github.celluloid_player.Celluloid"
+          "com.stremio.Stremio"
+          "org.videolan.VLC"
+
+          # Tools & Productivity
           "io.gitlab.librewolf-community"
           "org.qbittorrent.qBittorrent"
           "org.libreoffice.LibreOffice"
           "org.keepassxc.KeePassXC"
-          "com.discordapp.Discord"
-          "com.usebottles.bottles"
-          "com.system76.Popsicle"
           "md.obsidian.Obsidian"
-          "com.stremio.Stremio"
-          "org.signal.Signal"
-          "org.videolan.VLC"
-          "org.kde.kdenlive"
-          "cc.arduino.IDE2"
-          "org.gimp.GIMP"
-        ];
+          "com.system76.Popsicle"
 
+          # Creative
+          "org.kde.kdenlive"
+          "org.gimp.GIMP"
+          "cc.arduino.IDE2"
+
+          # Gaming
+          "com.usebottles.bottles"
+        ];
+      in
+        builtins.map mkApp appList;
+
+      # Specific overrides for Flatpak applications
       overrides = {
         "com.stremio.Stremio".Environment.QSG_RENDER_LOOP = "threaded";
         "com.discordapp.Discord".Context.filesystems = [ "home" ];
@@ -46,14 +57,14 @@
     # General
     blender
 
-    # C/C++
+    # C/C++ Development
     gcc
     gdb
 
-    # Rust
+    # Rust Development
     rustc
 
-    # Python
+    # Python Development
     python315
   ];
 }
