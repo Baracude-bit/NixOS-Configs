@@ -49,7 +49,7 @@
               {
                 facter.reportPath = ./hardware/${hostname}.json;
                 system.stateVersion = stateVersion;
-                networking.hostname = hostname;
+                networking.hostName = hostname;
               }
             ];
           }
