@@ -1,7 +1,7 @@
 {
   users = {
     mutableUsers = false;
-    users.emi = {
+    users.victor = {
       description = "victor";
       isNormalUser = true;
       extraGroups = [ "wheel", "libvirt" ];

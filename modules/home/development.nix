@@ -11,5 +11,10 @@
     # C/C++
     gcc
     gdb
+
+    # rust
+    rustc
+
+    #
   ];
 }

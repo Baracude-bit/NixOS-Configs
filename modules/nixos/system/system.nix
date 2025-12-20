@@ -20,7 +20,7 @@
     backupFileExtension = "hmBackup";
     extraSpecialArgs = { inherit inputs; };
     sharedModules = [ { home.stateVersion = config.system.stateVersion; } ];
-    users.emi.imports = [ (inputs.import-tree "${inputs.self}/modules/home") ];
+    users.victor.imports = [ (inputs.import-tree "${inputs.self}/modules/home") ];
   };
 
   services = {

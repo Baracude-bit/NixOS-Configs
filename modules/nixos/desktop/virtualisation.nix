@@ -17,7 +17,7 @@
 
   environment.systemPackages = with pkgs; [ docker-compose ];
 
-  users.users.emi.extraGroups = [
+  users.users.victor.extraGroups = [
     "libvirtd"
     "docker"
   ];
