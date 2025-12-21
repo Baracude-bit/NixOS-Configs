@@ -16,14 +16,15 @@
     disko.nixosModules.disko
   ];
 
-  system.autoUpgrade = {
-    enable = true;
-    flake = "github:Baracude-bit/NixOS-Configs";
-    randomizedDelaySec = "45min";
-    operation = "boot";
-    persistent = true;
-    dates = "daily";
-  };
+  # Auto repo sync (disabled for now)
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   flake = "github:Baracude-bit/NixOS-Configs";
+  #   randomizedDelaySec = "45min";
+  #   operation = "boot";
+  #   persistent = true;
+  #   dates = "daily";
+  # };
 
   # ================================================================
   # BOOT & KERNEL
