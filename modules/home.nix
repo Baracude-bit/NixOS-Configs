@@ -72,8 +72,11 @@
     rustc
 
     # Python Development
-    python3
-    python313
+    (python3.withPackages (
+      python-pkgs: with python-pkgs; [
+        tkinter
+      ]
+    ))
 
     # JS/TS
     nodePackages.nodejs
