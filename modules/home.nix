@@ -1,4 +1,3 @@
-
 { pkgs, inputs, ... }:
 {
   imports = [
@@ -23,33 +22,34 @@
       remotes."flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 
       # Helper function to generate full Flathub reference
-      packages = let
-        mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
-        appList = [
-          # Social & Media
-          "com.discordapp.Discord"
-          "org.signal.Signal"
-          "io.github.celluloid_player.Celluloid"
-          "com.stremio.Stremio"
-          "org.videolan.VLC"
+      packages =
+        let
+          mkApp = pkg: "flathub:app/${pkg}/x86_64/stable";
+          appList = [
+            # Social & Media
+            "com.discordapp.Discord"
+            "org.signal.Signal"
+            "io.github.celluloid_player.Celluloid"
+            "com.stremio.Stremio"
+            "org.videolan.VLC"
 
-          # Tools & Productivity
-          "io.gitlab.librewolf-community"
-          "org.qbittorrent.qBittorrent"
-          "org.libreoffice.LibreOffice"
-          "org.keepassxc.KeePassXC"
-          "md.obsidian.Obsidian"
-          "com.system76.Popsicle"
+            # Tools & Productivity
+            "io.gitlab.librewolf-community"
+            "org.qbittorrent.qBittorrent"
+            "org.libreoffice.LibreOffice"
+            "org.keepassxc.KeePassXC"
+            "md.obsidian.Obsidian"
+            "com.system76.Popsicle"
 
-          # Creative
-          "org.kde.kdenlive"
-          "org.gimp.GIMP"
-          "cc.arduino.IDE2"
+            # Creative
+            "org.kde.kdenlive"
+            "org.gimp.GIMP"
+            "cc.arduino.IDE2"
 
-          # Gaming
-          "com.usebottles.bottles"
-        ];
-      in
+            # Gaming
+            "com.usebottles.bottles"
+          ];
+        in
         builtins.map mkApp appList;
 
       # Specific overrides for Flatpak applications
@@ -74,5 +74,8 @@
     # Python Development
     python3
     python313
+
+    # JS/TS
+    nodePackages.nodejs
   ];
 }
