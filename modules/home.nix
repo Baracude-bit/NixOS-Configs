@@ -13,10 +13,6 @@
     neovim.enable = true;
     fastfetch.enable = true;
     btop.enable = true;
-    steam = {
-      enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
   };
 
   services = {
