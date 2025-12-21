@@ -32,12 +32,6 @@
     # Use latest Linux kernel
     kernelPackages = pkgs.linuxPackages_latest;
 
-    # Kernel parameters for AMD virtualization and IOMMU
-    kernelParams = [
-      "amd_iommu=on"
-      "iommu=pt"
-    ];
-
     # Kernel tuning
     kernel.sysctl = {
       "vm.swappiness" = 10;

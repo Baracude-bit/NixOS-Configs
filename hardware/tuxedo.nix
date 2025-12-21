@@ -6,4 +6,9 @@
     enable = true;
     tailor-gui.enable = true;
   };
+
+  boot.kernelParams = [
+    "amd_iommu=on"
+    "iommu=pt"
+  ];
 }
