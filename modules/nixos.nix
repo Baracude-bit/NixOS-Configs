@@ -229,6 +229,11 @@
   # ================================================================
   services.flatpak.enable = true;
 
+  steam = {
+      enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
+
   programs = {
     nix-index-database.comma.enable = true; # Run uninstalled binaries like , cowsay
     partition-manager.enable = true;
