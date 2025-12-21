@@ -1,13 +1,14 @@
 
 { pkgs, inputs, ... }:
 {
-  imports = with inputs; [ flatpak.homeModules.default ];
+  imports = [
+    inputs.flatpak.homeModules.default
+    ./ghostty.nix
+  ];
 
-  # Git & Github configuration
+  # Apps configuration
   programs = {
-    gh.enable = true;
     git.enable = true;
-    kitty.enable = true;
     brave.enable = true;
     neovim.enable = true;
   };
