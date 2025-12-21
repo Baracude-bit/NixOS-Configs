@@ -1,4 +1,10 @@
-{ config, inputs, pkgs, lib, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = with inputs; [
@@ -10,6 +16,15 @@
     disko.nixosModules.disko
   ];
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "Baracude-bit/NixOS-Configs";
+    randomizedDelaySec = "45min";
+    operation = "boot";
+    persistent = true;
+    dates = "daily";
+  };
+
   # ================================================================
   # BOOT & KERNEL
   # ================================================================
@@ -18,7 +33,10 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     # Kernel parameters for AMD virtualization and IOMMU
-    kernelParams = [ "amd_iommu=on" "iommu=pt" ];
+    kernelParams = [
+      "amd_iommu=on"
+      "iommu=pt"
+    ];
 
     # Kernel tuning
     kernel.sysctl = {
@@ -90,10 +108,22 @@
               type = "btrfs";
               # Btrfs Subvolumes
               subvolumes = {
-                "root" = { mountpoint = "/"; mountOptions = [ "noatime" ]; };
-                "nix"  = { mountpoint = "/nix"; mountOptions = [ "noatime" ]; };
-                "data" = { mountpoint = "/data"; mountOptions = [ "noatime" ]; };
-                "home" = { mountpoint = "/home"; mountOptions = [ "noatime" ]; };
+                "root" = {
+                  mountpoint = "/";
+                  mountOptions = [ "noatime" ];
+                };
+                "nix" = {
+                  mountpoint = "/nix";
+                  mountOptions = [ "noatime" ];
+                };
+                "data" = {
+                  mountpoint = "/data";
+                  mountOptions = [ "noatime" ];
+                };
+                "home" = {
+                  mountpoint = "/home";
+                  mountOptions = [ "noatime" ];
+                };
               };
             };
           };
@@ -273,7 +303,12 @@
     users.victor = {
       description = "victor";
       isNormalUser = true;
-      extraGroups = [ "libvirtd" "docker" "wheel" "dialout"];
+      extraGroups = [
+        "libvirtd"
+        "docker"
+        "wheel"
+        "dialout"
+      ];
       hashedPassword = "$y$j9T$oP0a3qfVM87Y4WqpNSCnF/$Wvod.OTB.jFbUnERpsI54hA1vVIGayZ8zt02KzyG/SD";
     };
   };
