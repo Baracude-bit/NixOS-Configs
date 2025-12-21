@@ -229,15 +229,15 @@
   # ================================================================
   services.flatpak.enable = true;
 
-  steam = {
-      enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
-
   programs = {
     nix-index-database.comma.enable = true; # Run uninstalled binaries like , cowsay
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
+
+    steam = {
+      enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
 
     # Clean up garbage automatically
     nh = {
