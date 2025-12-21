@@ -281,7 +281,7 @@
     };
   };
 
-  security.sudo.extraConfig = "Defaults lecture=never,timestamp_type=global,pwfeedback";
+  security.sudo.extraConfig = "Defaults lecture=never,timestamp_type=global";
 
   # ================================================================
   # NIX CONFIGURATION
