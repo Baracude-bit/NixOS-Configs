@@ -18,7 +18,7 @@
 
   system.autoUpgrade = {
     enable = true;
-    flake = "Baracude-bit/NixOS-Configs";
+    flake = "github:Baracude-bit/NixOS-Configs";
     randomizedDelaySec = "45min";
     operation = "boot";
     persistent = true;
