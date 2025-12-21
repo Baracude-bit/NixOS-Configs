@@ -225,7 +225,7 @@
   ];
 
   # ================================================================
-  # PROGRAMS & GAMING
+  # PROGRAMS & SERVICES
   # ================================================================
   services.flatpak.enable = true;
 
@@ -234,15 +234,7 @@
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
 
-    # Gaming Setup
-    gamescope.enable = true;
-    gamemode.enable = true;
-    steam = {
-      enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
-
-    # Nix Helper (Clean up garbage automatically)
+    # Clean up garbage automatically
     nh = {
       enable = true;
       flake = "/etc/nixos";
@@ -276,7 +268,7 @@
     users.victor = {
       description = "victor";
       isNormalUser = true;
-      extraGroups = [ "libvirtd" "docker" "wheel" ];
+      extraGroups = [ "libvirtd" "docker" "wheel" "dialout"];
       hashedPassword = "$y$j9T$oP0a3qfVM87Y4WqpNSCnF/$Wvod.OTB.jFbUnERpsI54hA1vVIGayZ8zt02KzyG/SD";
     };
   };
@@ -286,6 +278,18 @@
   # ================================================================
   # NIX CONFIGURATION
   # ================================================================
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # print build logs
+    ];
+    dates = "weekly";
+    randomizedDelaySec = "45min";
+  };
+
   nix = {
     channel.enable = false;
     optimise.automatic = true;

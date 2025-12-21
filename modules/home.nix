@@ -11,6 +11,12 @@
     git.enable = true;
     brave.enable = true;
     neovim.enable = true;
+    fastfetch.enable = true;
+    btop.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
   };
 
   services = {
@@ -70,6 +76,7 @@
     rustc
 
     # Python Development
-    python315
+    python3
+    python313
   ];
 }

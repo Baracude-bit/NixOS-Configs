@@ -17,6 +17,7 @@
       cursor-text = "#15161e";
       cursor-style = "block_hollow";
       font-size = 10;
+      keybind = "ctrl+l=clear_screen";
 
       palette = [
         "0=#15161e"
