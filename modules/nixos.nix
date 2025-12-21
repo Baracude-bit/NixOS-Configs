@@ -38,9 +38,6 @@
       "vm.max_map_count" = 2147483642; # Required for some games (e.g. Star Citizen)
     };
 
-    # Emulate ARM architecture (useful for building ARM docker images on x86)
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
-
     loader = {
       timeout = 0;
       efi.canTouchEfiVariables = true;
