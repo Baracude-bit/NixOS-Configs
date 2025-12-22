@@ -301,7 +301,6 @@
         "wheel"
         "dialout"
       ];
-      hashedPassword = "$y$j9T$oP0a3qfVM87Y4WqpNSCnF/$Wvod.OTB.jFbUnERpsI54hA1vVIGayZ8zt02KzyG/SD";
     };
   };
 
