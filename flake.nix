@@ -54,6 +54,9 @@
         );
     in
     {
-      nixosConfigurations = mkHosts [ "tuxedo" ];
+      nixosConfigurations = mkHosts [
+        "tuxedo"
+        "aorus"
+      ];
     };
 }
