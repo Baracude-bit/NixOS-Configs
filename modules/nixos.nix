@@ -127,7 +127,7 @@
   # Ensure /data is available before persistence tries to bind mount files
   fileSystems."/data".neededForBoot = true;
 
-  # --- IMPERMANENCE (PERSISTENCE) ---
+  # --- PERSISTENCE ---
   # Since root is wiped on boot, we explicitly define what is kept in /data
   environment.persistence."/data" = {
     hideMounts = true;
@@ -159,13 +159,13 @@
     thermald.enable = true;
     bpftune.enable = true;
 
-    # Custom Scheduler (SCX)
+    # Custom Scheduler
     scx = {
       enable = true;
       scheduler = "scx_lavd";
     };
 
-    # Audio (PipeWire)
+    # Audio
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -255,6 +255,7 @@
     nix-index-database.comma.enable = true; # Run uninstalled binaries like , cowsay
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
+    timeshift.enable = true;
 
     steam = {
       enable = true;

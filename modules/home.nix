@@ -46,7 +46,7 @@
             "org.gimp.GIMP"
             "cc.arduino.IDE2"
 
-            # Gaming
+            # Windows apps & games
             "com.usebottles.bottles"
           ];
         in
