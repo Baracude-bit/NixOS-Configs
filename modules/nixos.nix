@@ -255,7 +255,6 @@
     nix-index-database.comma.enable = true; # Run uninstalled binaries like , cowsay
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
-    timeshift.enable = true;
     steam.enable = true;
 
     # Clean up garbage automatically
@@ -268,6 +267,10 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    timeshift
+  ];
 
   # ================================================================
   # VIRTUALIZATION
