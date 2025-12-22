@@ -12,7 +12,6 @@
       tailor-gui.enable = true;
     };
 
-    graphics.enable = true;
     nvidia = {
       open = true;
       nvidiaSettings = false;
