@@ -10,13 +10,11 @@
       tailor-gui.enable = true;
     };
 
-    hardware = {
       graphics.enable = true;
       nvidia = {
         nvidiaSettings = false;
         powerManagement.enable = true;
       };
-    };
   };
 
   boot.kernelParams = [
