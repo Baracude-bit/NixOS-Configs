@@ -256,11 +256,7 @@
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
     timeshift.enable = true;
-
-    steam = {
-      enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
+    steam.enable = true;
 
     # Clean up garbage automatically
     nh = {
