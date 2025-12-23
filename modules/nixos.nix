@@ -228,10 +228,8 @@
   # Remove default KDE packages we don't want
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
-    kwin-x11
     aurorae
     elisa
-    krdp
   ];
 
   environment.variables.NIXOS_OZONE_WL = 1; # Hint electron apps to use Wayland

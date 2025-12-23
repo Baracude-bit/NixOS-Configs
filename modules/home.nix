@@ -62,6 +62,10 @@
 
   home.packages = with pkgs; [
     # General
+    unzip
+    gzip
+
+    # Art
     blender
 
     # C/C++ Development
