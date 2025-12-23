@@ -25,7 +25,7 @@
   
   environment.etc."crypttab".text = ''
     # <Mapper Name>  <Device UUID>                         <Keyfile Path>               <Options>
-    storage          UUID=adb3f0a5-3a17-449d-b12b-f8875ac82ef9  /etc/keys/StorageKey    nofail
+    storage          UUID=adb3f0a5-3a17-449d-b12b-f8875ac82ef9  /data/etc/keys/StorageKey    nofail,tries=0
   '';
 
   # Mount Point

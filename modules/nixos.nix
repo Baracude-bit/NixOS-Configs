@@ -209,6 +209,7 @@
   environment.systemPackages = with pkgs; [
     timeshift
     appimage-run
+    unrar
   ];
 
   # ================================================================
