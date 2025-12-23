@@ -30,14 +30,8 @@
   # BOOT & KERNEL
   # ================================================================
   boot = {
-    # Use latest Linux kernel
-    kernelPackages = pkgs.linuxPackages_latest;
-
-    # Kernel tuning
-    kernel.sysctl = {
-      "vm.swappiness" = 10;
-      "vm.max_map_count" = 2147483642; # Required for some games (e.g. Star Citizen)
-    };
+    # LTS kernel
+    kernelPackages = pkgs.linuxPackages;
 
     loader = {
       timeout = 0;
@@ -136,8 +130,10 @@
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/ssh"
+      "/etc/keys"
       "/var/lib/systemd/coredump"
       "/var/lib/systemd/timers"
+      "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/sbctl"
       "/var/cache"
@@ -156,7 +152,6 @@
   services = {
     # System maintenance
     btrfs.autoScrub.enable = true;
-    thermald.enable = true;
     bpftune.enable = true;
 
     # Audio
@@ -164,44 +159,6 @@
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
-
-      # --- AUDIO PROCESSING CHAIN ---
-      # This creates a virtual node for Real-time Noise Suppression (RNNoise)
-      # It filters microphone input to remove background noise.
-      extraConfig.pipewire."99-input-denoising"."context.modules" = [
-        {
-          "name" = "libpipewire-module-filter-chain";
-          "args" = {
-            "node.description" = "Noise Canceling Source";
-            "media.name" = "Noise Canceling Source";
-            "filter.graph" = {
-              "nodes" = [
-                {
-                  "type" = "ladspa";
-                  "name" = "rnnoise";
-                  "plugin" = "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
-                  "label" = "noise_suppressor_mono";
-                  "control" = {
-                    "VAD Threshold (%)" = 75.0;
-                    "VAD Grace Period (ms)" = 200;
-                    "Retroactive VAD Grace (ms)" = 0;
-                  };
-                }
-              ];
-            };
-            "capture.props" = {
-              "node.name" = "capture.rnnoise_source";
-              "node.passive" = true;
-              "audio.rate" = 48000;
-            };
-            "playback.props" = {
-              "node.name" = "rnnoise_source";
-              "media.class" = "Audio/Source";
-              "audio.rate" = 48000;
-            };
-          };
-        }
-      ];
     };
   };
 
@@ -216,16 +173,6 @@
       wayland.enable = true;
     };
   };
-  # Alternative console renderer
-  services.kmscon.enable = true;
-
-  # Remove default KDE packages we don't want
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    elisa
-  ];
-
-  environment.variables.NIXOS_OZONE_WL = 1; # Hint electron apps to use Wayland
 
   fonts.packages = with pkgs; [
     noto-fonts-color-emoji
@@ -261,6 +208,7 @@
 
   environment.systemPackages = with pkgs; [
     timeshift
+    appimage-run
   ];
 
   # ================================================================

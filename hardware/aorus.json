@@ -1535,27 +1535,29 @@
           "value": 0
         },
         "vendor": {
-          "hex": "0951",
-          "name": "Kingston",
-          "value": 2385
+          "hex": "0781",
+          "name": "SanDisk",
+          "value": 1921
         },
         "device": {
-          "hex": "1666",
-          "name": "DataTraveler 3.0",
-          "value": 5734
+          "hex": "55b0",
+          "name": "Portable SSD",
+          "value": 21936
         },
         "revision": {
           "hex": "0000",
-          "name": "PMAP",
+          "name": "0305",
           "value": 0
         },
-        "serial": "EE07D95150E9",
-        "model": "Kingston DataTraveler 3.0",
+        "serial": "224153402079",
+        "model": "SanDisk Portable SSD",
         "sysfs_id": "/class/block/sdb",
         "sysfs_bus_id": "6:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/usb2/2-2/2-2:1.0/host6/target6:0:0/6:0:0:0",
         "unix_device_names": [
-          "/dev/disk/by-id/usb-Kingston_DataTraveler_3.0_E0D55E6C09F7E791092C0B13-0:0",
+          "/dev/disk/by-id/ata-SanDisk_Portable_SSD_22401L467408",
+          "/dev/disk/by-id/usb-SanDisk_Portable_SSD_323234313533343032303739-0:0",
+          "/dev/disk/by-id/wwn-0x5001b444a5949088",
           "/dev/disk/by-path/pci-0000:04:00.0-usb-0:2:1.0-scsi-0:0:0:0",
           "/dev/disk/by-path/pci-0000:04:00.0-usbv3-0:2:1.0-scsi-0:0:0:0",
           "/dev/sdb"
@@ -1564,30 +1566,30 @@
         "resources": [
           {
             "type": "disk_geo",
-            "cylinders": 59136,
-            "heads": 64,
-            "sectors": 32,
+            "cylinders": 121601,
+            "heads": 255,
+            "sectors": 63,
             "size": "0x0",
             "geo_type": "logical"
           },
           {
             "type": "size",
             "unit": "sectors",
-            "value_1": 121110528,
+            "value_1": 1953523712,
             "value_2": 512
           }
         ],
-        "driver": "usb-storage",
-        "driver_module": "usb_storage",
+        "driver": "uas",
+        "driver_module": "uas",
         "drivers": [
           "sd",
-          "usb-storage"
+          "uas"
         ],
         "driver_modules": [
           "sd_mod",
-          "usb_storage"
+          "uas"
         ],
-        "module_alias": "usb:v0951p1666d0110dc00dsc00dp00ic08isc06ip50in00"
+        "module_alias": "usb:v0781p55B0d0305dc00dsc00dp00ic08isc06ip62in00"
       },
       {
         "index": 59,
@@ -1663,6 +1665,39 @@
         "driver_modules": [
           "ahci",
           "sd_mod"
+        ]
+      },
+      {
+        "index": 60,
+        "attached_to": 0,
+        "class_list": [
+          "disk",
+          "block_device"
+        ],
+        "base_class": {
+          "hex": "0106",
+          "name": "Mass Storage Device",
+          "value": 262
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Disk",
+          "value": 0
+        },
+        "model": "Disk",
+        "sysfs_id": "/class/block/zram0",
+        "unix_device_names": [
+          "/dev/disk/by-label/zram0",
+          "/dev/disk/by-uuid/25ce6209-83c7-4857-9c50-1a84ef76f94c",
+          "/dev/zram0"
+        ],
+        "resources": [
+          {
+            "type": "size",
+            "unit": "sectors",
+            "value_1": 4091136,
+            "value_2": 4096
+          }
         ]
       }
     ],
@@ -1752,7 +1787,7 @@
     ],
     "hub": [
       {
-        "index": 61,
+        "index": 62,
         "attached_to": 21,
         "class_list": [
           "usb",
@@ -1774,7 +1809,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1788,7 +1823,7 @@
           "value": 0
         },
         "serial": "0000:08:00.4",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:08:00.4/usb6/6-0:1.0",
         "sysfs_bus_id": "6-0:1.0",
         "detail": {
@@ -1829,8 +1864,8 @@
         "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 62,
-        "attached_to": 72,
+        "index": 63,
+        "attached_to": 73,
         "class_list": [
           "usb",
           "hub"
@@ -1914,7 +1949,7 @@
         "module_alias": "usb:v05E3p0608d6090dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 63,
+        "index": 64,
         "attached_to": 42,
         "class_list": [
           "usb",
@@ -1936,7 +1971,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1950,7 +1985,7 @@
           "value": 0
         },
         "serial": "0000:08:00.3",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:08:00.3/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -2001,7 +2036,7 @@
         "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 71,
+        "index": 72,
         "attached_to": 42,
         "class_list": [
           "usb",
@@ -2023,7 +2058,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2037,7 +2072,7 @@
           "value": 0
         },
         "serial": "0000:08:00.3",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:08:00.3/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -2078,7 +2113,7 @@
         "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 72,
+        "index": 73,
         "attached_to": 49,
         "class_list": [
           "usb",
@@ -2100,7 +2135,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2114,7 +2149,7 @@
           "value": 0
         },
         "serial": "0000:04:00.0",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -2165,7 +2200,7 @@
         "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 73,
+        "index": 74,
         "attached_to": 21,
         "class_list": [
           "usb",
@@ -2187,7 +2222,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2201,7 +2236,7 @@
           "value": 0
         },
         "serial": "0000:08:00.4",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:08:00.4/usb5/5-0:1.0",
         "sysfs_bus_id": "5-0:1.0",
         "resources": [
@@ -2252,7 +2287,7 @@
         "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 77,
+        "index": 78,
         "attached_to": 49,
         "class_list": [
           "usb",
@@ -2274,7 +2309,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.1 xhci-hcd",
+          "name": "Linux 6.18.2 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2288,7 +2323,7 @@
           "value": 0
         },
         "serial": "0000:04:00.0",
-        "model": "Linux 6.18.1 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.2 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -2331,8 +2366,8 @@
     ],
     "keyboard": [
       {
-        "index": 70,
-        "attached_to": 63,
+        "index": 71,
+        "attached_to": 64,
         "class_list": [
           "keyboard",
           "usb"
@@ -2378,7 +2413,7 @@
           "/dev/input/by-id/usb-Razer_Razer_Ornata_V3_X-event-kbd",
           "/dev/input/by-path/pci-0000:08:00.3-usb-0:1:1.0-event-kbd",
           "/dev/input/by-path/pci-0000:08:00.3-usbv2-0:1:1.0-event-kbd",
-          "/dev/input/event0"
+          "/dev/input/event1"
         ],
         "resources": [
           {
@@ -2855,8 +2890,8 @@
     ],
     "mouse": [
       {
-        "index": 65,
-        "attached_to": 63,
+        "index": 66,
+        "attached_to": 64,
         "class_list": [
           "mouse",
           "usb"
@@ -2963,8 +2998,8 @@
         "module_alias": "usb:v1532p0294d0200dc00dsc00dp00ic03isc00ip02in02"
       },
       {
-        "index": 66,
-        "attached_to": 72,
+        "index": 67,
+        "attached_to": 73,
         "class_list": [
           "mouse",
           "usb"
@@ -3163,7 +3198,7 @@
     ],
     "network_interface": [
       {
-        "index": 78,
+        "index": 80,
         "attached_to": 41,
         "class_list": [
           "network_interface"
@@ -3204,7 +3239,7 @@
         ]
       },
       {
-        "index": 79,
+        "index": 81,
         "attached_to": 0,
         "class_list": [
           "network_interface"
@@ -3656,8 +3691,8 @@
         "label": "Realtek ALC1220"
       },
       {
-        "index": 60,
-        "attached_to": 72,
+        "index": 61,
+        "attached_to": 73,
         "class_list": [
           "sound",
           "usb"
@@ -3748,8 +3783,8 @@
         "module_alias": "usb:v03F0p0B92d4102dc00dsc00dp00ic01isc01ip00in00"
       },
       {
-        "index": 67,
-        "attached_to": 72,
+        "index": 68,
+        "attached_to": 73,
         "class_list": [
           "sound",
           "usb"
@@ -3840,8 +3875,8 @@
         "module_alias": "usb:v03F0p0B92d4102dc00dsc00dp00ic01isc02ip00in01"
       },
       {
-        "index": 75,
-        "attached_to": 72,
+        "index": 76,
+        "attached_to": 73,
         "class_list": [
           "sound",
           "usb"
@@ -4076,8 +4111,8 @@
     },
     "usb": [
       {
-        "index": 64,
-        "attached_to": 72,
+        "index": 65,
+        "attached_to": 73,
         "class_list": [
           "usb",
           "unknown"
@@ -4174,8 +4209,8 @@
         "module_alias": "usb:v03F0p0B92d4102dc00dsc00dp00ic03isc00ip00in03"
       },
       {
-        "index": 69,
-        "attached_to": 72,
+        "index": 70,
+        "attached_to": 73,
         "class_list": [
           "usb",
           "unknown"
@@ -4265,8 +4300,8 @@
         "module_alias": "usb:v048Dp5702d0001dc00dsc00dp00ic03isc00ip00in00"
       },
       {
-        "index": 74,
-        "attached_to": 72,
+        "index": 75,
+        "attached_to": 73,
         "class_list": [
           "usb",
           "unknown"
@@ -4313,7 +4348,7 @@
           "/dev/input/by-id/usb-Logitech_G502_HERO_Gaming_Mouse_106F32563033-if01-event-kbd",
           "/dev/input/by-path/pci-0000:04:00.0-usb-0:3:1.1-event-kbd",
           "/dev/input/by-path/pci-0000:04:00.0-usbv2-0:3:1.1-event-kbd",
-          "/dev/input/event5"
+          "/dev/input/event6"
         ],
         "resources": [
           {
@@ -4363,8 +4398,8 @@
         "module_alias": "usb:v046DpC08Bd2703dc00dsc00dp00ic03isc00ip00in01"
       },
       {
-        "index": 76,
-        "attached_to": 63,
+        "index": 77,
+        "attached_to": 64,
         "class_list": [
           "usb",
           "unknown"
@@ -4407,10 +4442,10 @@
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:08:00.3/usb3/3-1/3-1:1.1",
         "sysfs_bus_id": "3-1:1.1",
         "unix_device_names": [
-          "/dev/input/by-id/usb-Razer_Razer_Ornata_V3_X-if01-event-kbd",
-          "/dev/input/by-path/pci-0000:08:00.3-usb-0:1:1.1-event-kbd",
-          "/dev/input/by-path/pci-0000:08:00.3-usbv2-0:1:1.1-event-kbd",
-          "/dev/input/event1"
+          "/dev/input/by-id/usb-Razer_Razer_Ornata_V3_X-event-if01",
+          "/dev/input/by-path/pci-0000:08:00.3-usb-0:1:1.1-event",
+          "/dev/input/by-path/pci-0000:08:00.3-usbv2-0:1:1.1-event",
+          "/dev/input/event3"
         ],
         "resources": [
           {
