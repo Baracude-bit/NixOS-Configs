@@ -19,7 +19,7 @@
   # Auto repo sync (disabled for now)
   # system.autoUpgrade = {
   #   enable = true;
-  #   flake = "github:Baracude-bit/NixOS-Configs";
+  #   flake = "github:Baracude-bit/NixOgS-Configs";
   #   randomizedDelaySec = "45min";
   #   operation = "boot";
   #   persistent = true;
@@ -222,7 +222,6 @@
   # Remove default KDE packages we don't want
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
-    aurorae
     elisa
   ];
 
