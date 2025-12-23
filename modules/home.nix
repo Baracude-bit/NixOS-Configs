@@ -61,6 +61,9 @@
   };
 
   home.packages = with pkgs; [
+    # Disk Space usage
+    kdePackages.filelight
+
     # General
     unzip
     gzip
