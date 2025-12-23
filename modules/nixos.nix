@@ -159,12 +159,6 @@
     thermald.enable = true;
     bpftune.enable = true;
 
-    # Custom Scheduler
-    scx = {
-      enable = true;
-      scheduler = "scx_lavd";
-    };
-
     # Audio
     pipewire = {
       enable = true;
