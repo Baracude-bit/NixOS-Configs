@@ -194,6 +194,7 @@
     partition-manager.enable = true;
     nix-ld.enable = true; # Run unpatched dynamic binaries
     steam.enable = true;
+    kdeconnect.enable = true;
 
     # Clean up garbage automatically
     nh = {
@@ -207,8 +208,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    timeshift
     appimage-run
+    timeshift
     unrar
   ];
 

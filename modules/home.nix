@@ -38,8 +38,9 @@
             "org.qbittorrent.qBittorrent"
             "org.libreoffice.LibreOffice"
             "org.keepassxc.KeePassXC"
-            "md.obsidian.Obsidian"
             "com.system76.Popsicle"
+            "xyz.xclicker.xclicker"
+            "md.obsidian.Obsidian"
 
             # Creative
             "org.kde.kdenlive"
@@ -61,6 +62,9 @@
   };
 
   home.packages = with pkgs; [
+    # Plasma Helper
+    kdePackages.kconfig
+
     # Disk Space usage
     kdePackages.filelight
 
