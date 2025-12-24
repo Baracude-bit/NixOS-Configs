@@ -81,10 +81,26 @@
     blender
 
     # C/C++ Development
+    clang-tools
     gcc
     gdb
 
+    # Arduino
+    arduino-language-server
+
+    # Lua
+    lua-language-server
+
+    # Python
+    pyright
+    black
+
+    # Nix
+    nixpkgs-fmt
+    nil
+
     # Rust Development
+    rust-analyzer
     rustc
 
     # Python Development
