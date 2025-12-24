@@ -10,7 +10,6 @@
   programs = {
     git.enable = true;
     brave.enable = true;
-    neovim.enable = true;
     fastfetch.enable = true;
     btop.enable = true;
 
