@@ -1,7 +1,8 @@
 { pkgs, inputs, ... }:
 {
-  imports = [
-    inputs.flatpak.homeModules.default
+  imports = with inputs; [
+    nvchad.homeManagerModules.default
+    flatpak.homeModules.default
     ./ghostty.nix
   ];
 
@@ -12,6 +13,11 @@
     neovim.enable = true;
     fastfetch.enable = true;
     btop.enable = true;
+
+    nvchad = {
+      enable = true;
+      backup = false;
+    };
   };
 
   services = {
