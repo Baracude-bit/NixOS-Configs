@@ -16,7 +16,7 @@
 
     nvchad = {
       enable = true;
-      backup = false;
+      hm-activation = false;
     };
   };
 
