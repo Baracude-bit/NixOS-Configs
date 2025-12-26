@@ -39,6 +39,7 @@
             "org.videolan.VLC"
 
             # Tools & Productivity
+            "org.torproject.torbrowser-launcher"
             "io.gitlab.librewolf-community"
             "org.qbittorrent.qBittorrent"
             "org.libreoffice.LibreOffice"
