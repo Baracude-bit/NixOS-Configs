@@ -144,7 +144,12 @@
   # ================================================================
   # HARDWARE & SERVICES
   # ================================================================
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
   hardware.enableRedistributableFirmware = true;
   zramSwap.enable = true;
   time.timeZone = "Europe/Helsinki";
