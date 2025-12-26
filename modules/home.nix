@@ -87,9 +87,11 @@
 
     # Arduino
     arduino-language-server
+    arduino-cli
 
     # Lua
     lua-language-server
+    stylua
 
     # Python
     pyright
@@ -101,6 +103,7 @@
 
     # Rust Development
     rust-analyzer
+    rustfmt
     rustc
 
     # Python Development
